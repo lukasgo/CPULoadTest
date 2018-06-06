@@ -12,15 +12,15 @@ public class CPULoadResource {
 		return "Server up and running";
 	}
 
-	@GetMapping("/produceload")
-	public String produceLoad() {
+	@GetMapping("/start")
+	public String startTest() {
 		final int NUM_TESTS = 1000;
 		long start = System.nanoTime();
 		for (int i = 0; i < NUM_TESTS; i++) {
 			spin(500);
 		}
 
-		return "CPU Load Test completed";
+		return "CPU Load Test completed!!!";
 	}
 
 	private static void spin(int milliseconds) {
