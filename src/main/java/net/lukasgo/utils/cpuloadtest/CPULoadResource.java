@@ -23,6 +23,17 @@ public class CPULoadResource {
 		return "CPU Load Test completed!!!";
 	}
 
+	@GetMapping("/load")
+	public String startLoadTest() {
+		final int NUM_TESTS = 200;
+		long start = System.nanoTime();
+		for (int i = 0; i < NUM_TESTS; i++) {
+			spin(100);
+		}
+
+		return "CPU Load Test completed!!!";
+	}
+
 	private static void spin(int milliseconds) {
 		long sleepTime = milliseconds*1000000L; // convert to nanoseconds
 		long startTime = System.nanoTime();
